@@ -1,0 +1,8 @@
+## Interface: 100200
+## Title: MacroManager
+## Author: Glaubstar (Blake Glaub)
+## Version: 0.0.1
+## Notes: Manages macros in a better way than the default UI
+
+# Main source file
+src\MacroManager.lua
