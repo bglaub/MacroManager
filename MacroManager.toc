@@ -3,6 +3,7 @@
 ## Author: Glaubstar (Blake Glaub)
 ## Version: 0.0.1
 ## Notes: Manages macros in a better way than the default UI
+## SavedVariables: MacroManagerData
 
 # Main source file
 src\MacroManager.lua
