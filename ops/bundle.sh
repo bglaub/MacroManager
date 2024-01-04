@@ -4,6 +4,10 @@
 set -eu
 
 function main() {
+    
+    # make all globals accessible
+    . ./global.sh
+
     # remove distribution if it already exists
     if [ -d "../dist" ]; then
         rm -rf ../dist
@@ -13,9 +17,8 @@ function main() {
     mkdir -p ../dist
 
     # copy all the addon files to the distribution
-    cp ../MacroManager.toc ../dist
     cp ../License ../dist
-    cp -r ../src ../dist
+    cp -r ../src/* ../dist
 }
 
 main "$@"

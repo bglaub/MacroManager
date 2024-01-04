@@ -4,7 +4,10 @@
 set -eu
 
 function main() {
-    local addon_directory=${1:-"/c/Program Files (x86)/World of Warcraft/_retail_/Interface/AddOns"}
+    # make all globals accessible
+    . ./global.sh
+    
+    local addon_directory=${1:-"${DEFAULT_ADDON_DIRECTORY}"}
     local macro_manager_directory="${addon_directory}/MacroManager"
 
     # re-establish distribution

@@ -5,5 +5,8 @@
 ## Notes: Manages macros in a better way than the default UI
 ## SavedVariables: MacroManagerData
 
+# Data Access
+MacroManagerDataAccessor.lua
+
 # Main source file
-src\MacroManager.lua
+MacroManager.lua
