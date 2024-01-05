@@ -2,7 +2,16 @@ std = "lua51"
 exclude_files = {
 	".luacheckrc"
 }
+ignore = {
+	"11./SLASH_.*", -- Setting an undefined (Slash handler) global variable
+	"212" -- Unused argument
+}
 globals = {
+	-- MacroManager
+	"MacroManagerData",
+	"MacroManagerDataAccessor",
+
+
 	-- FrameXML misc
 	"BackdropTemplateMixin",
 	"C_Timer",
@@ -4625,6 +4634,7 @@ globals = {
 	"FIRST_NUMBER_CAP_VALUE",
 	"GARRISON_HIGH_THREAT_VALUE",
 	"WOW_TOKEN_ITEM_ID",
+	"NUM_CHAT_WINDOWS",
 
 	-- GlobalStrings.lua
 	"ABANDON_PET",
