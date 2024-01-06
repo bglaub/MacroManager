@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # make sure to error out
 set -eu
@@ -11,7 +11,7 @@ function main() {
     
     # delete any stored variables
     cd "${addon_directory}/../../WTF"
-    find . -name \*MacroManager* -type f -delete
+    find . -name "\*MacroManager*" -type f -delete
 }
 
 main "$@"

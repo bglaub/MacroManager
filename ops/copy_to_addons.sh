@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # make sure to error out
 set -eu
