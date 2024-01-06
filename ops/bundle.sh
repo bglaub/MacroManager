@@ -6,6 +6,7 @@ set -eu
 function main() {
 
     # make all globals accessible
+    # shellcheck source=global.sh
     . ./global.sh
 
     # remove distribution if it already exists
