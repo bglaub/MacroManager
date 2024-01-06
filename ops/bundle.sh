@@ -5,26 +5,30 @@ set -eu
 
 function main() {
 
-    # make all globals accessible
-    # shellcheck source=ops/global.sh
-    . ./global.sh
-
-    # remove distribution if it already exists
-    if [ -d "../dist" ]; then
-        rm -rf ../dist
+    # remove .release directory if it already exists
+    if [ -d "../.release" ]; then
+        rm -rf ../.release
     fi
 
-    # recreate distribution directory
-    mkdir -p ../dist
+    # recreate .release directory
+    mkdir -p ../.release
 
-    # copy all the addon files to the distribution
-    cp -r ../MacroManager ../dist
-    cp ../License ../dist/MacroManager
-
-    # remove any dev-tools for production
-    if [ "$#" -eq 1 ] && [ "$1" == "-p" ]; then
-        sed -i "s;dev-tools/.*;;g" ../dist/MacroManager/MacroManager.toc
+    # remove .packager directory if it already exists
+    if [ -d "../.packager" ]; then
+        rm -rf ../.packager
     fi
+
+    # move up one directory to clone packager off the root
+    cd ../
+
+    # pull down BigWigMods packager
+    git clone https://github.com/BigWigsMods/packager.git .packager
+
+    # move to .packager to run the release
+    cd .packager
+
+    # run release
+    ./release.sh -z -d -t "$PWD/.." -m "$PWD/../.pkgmeta-dev"
 }
 
 main "$@"

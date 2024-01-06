@@ -1,0 +1,9 @@
+## Interface: 100200
+## Title: MacroManagerDevTools
+## Author: Glaubstar (Blake Glaub)
+## Version: @project-version@
+## Dependencies: MacroManager
+## Notes: Development tools that make working with MacroManager easier
+
+# Main source file
+MacroManagerDevTools.lua

@@ -9,18 +9,16 @@ function main() {
     . ./global.sh
     
     local addon_directory=${1:-"${DEFAULT_ADDON_DIRECTORY}"}
-    local macro_manager_directory="${addon_directory}/MacroManager"
 
-    # re-establish distribution
+    # re-establish release
     ./bundle.sh
 
-    # remove MacroManager addon if it exists
-    if [ -d "$macro_manager_directory" ]; then
-        rm -rf "$macro_manager_directory"
-    fi
+    # remove macros from addon directories
+    cd ../.release
+    for dir in *; do (rm -rf "${addon_directory:?}/${dir}"); done
 
-    # copy all the distribution files to the addon directory
-    cp -r ../dist* "$addon_directory"
+    # copy all the release files to the addon directory
+    cp -r -- * "$addon_directory"
 }
 
 main "$@"
