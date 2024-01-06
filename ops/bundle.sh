@@ -18,12 +18,12 @@ function main() {
     mkdir -p ../dist
 
     # copy all the addon files to the distribution
-    cp ../License ../dist
-    cp -r ../src/* ../dist
+    cp -r ../MacroManager ../dist
+    cp ../License ../dist/MacroManager
 
     # remove any dev-tools for production
     if [ "$#" -eq 1 ] && [ "$1" == "-p" ]; then
-        sed -i "s;dev-tools/.*;;g" ../dist/MacroManager.toc
+        sed -i "s;dev-tools/.*;;g" ../dist/MacroManager/MacroManager.toc
     fi
 }
 

@@ -19,11 +19,8 @@ function main() {
         rm -rf "$macro_manager_directory"
     fi
 
-    # create the macro manager addon directory
-    mkdir -p "$macro_manager_directory"
-
     # copy all the distribution files to the addon directory
-    cp -r ../dist/* "$macro_manager_directory"
+    cp -r ../dist* "$addon_directory"
 }
 
 main "$@"
