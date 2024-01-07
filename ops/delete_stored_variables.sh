@@ -10,9 +10,19 @@ function main() {
     
     local addon_directory=${1:-"${DEFAULT_ADDON_DIRECTORY}"}
     
+    echo ""
+    echo ""
+    echo "--------------------------------------------------------------------------------"
+    echo "DELETING STORED VARIABLES"
+    echo "--------------------------------------------------------------------------------"
+    
     # delete any stored variables
     cd "${addon_directory}/../../WTF"
-    find . -name "\*MacroManager*" -type f -delete
+    find . -name "MacroManager.lua*" -type f -delete -print
+
+    echo "--------------------------------------------------------------------------------"
+    echo ""
+    echo ""
 }
 
 main "$@"

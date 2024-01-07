@@ -4,31 +4,32 @@
 set -eu
 
 function main() {
+    
+    echo ""
+    echo ""
+    echo "--------------------------------------------------------------------------------"
+    echo "BUNDLING"
+    echo "--------------------------------------------------------------------------------"
 
     # remove .release directory if it already exists
     if [ -d "../.release" ]; then
+        echo "Removing .release directory..."
         rm -rf ../.release
     fi
 
     # recreate .release directory
+    echo "Creating .release directory..."
     mkdir -p ../.release
 
-    # remove .packager directory if it already exists
-    if [ -d "../.packager" ]; then
-        rm -rf ../.packager
-    fi
+    # copy addons to .release
+    echo "Copying MacroManager to .release..."
+    cp -r ../MacroManager ../.release
+    echo "Copying MacroManagerDevTools to .release..."
+    cp -r ../MacroManagerDevTools ../.release
 
-    # move up one directory to clone packager off the root
-    cd ../
-
-    # pull down BigWigMods packager
-    git clone https://github.com/BigWigsMods/packager.git .packager
-
-    # move to .packager to run the release
-    cd .packager
-
-    # run release
-    ./release.sh -z -d -t "$PWD/.." -m "$PWD/../.pkgmeta-dev"
+    echo "--------------------------------------------------------------------------------"
+    echo ""
+    echo ""
 }
 
 main "$@"

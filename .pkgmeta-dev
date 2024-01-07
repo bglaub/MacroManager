@@ -1,9 +1,0 @@
-package-as: MacroManager
-
-ignore:
-  - README.md
-  - "ops/*"
-
-move-folders:
-  MacroManager/MacroManager: MacroManager
-  MacroManager/MacroManagerDevTools: MacroManagerDevTools
