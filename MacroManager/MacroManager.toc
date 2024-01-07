@@ -5,6 +5,9 @@
 ## Notes: Manages macros in a better way than the default UI
 ## SavedVariables: MacroManagerData
 
+# Helpers
+helpers\SlashCommand.lua
+
 # Data Access
 MacroManagerDataAccessor.lua
 

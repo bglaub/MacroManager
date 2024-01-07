@@ -27,8 +27,7 @@ macro_manager_main_frame:SetScript("OnEvent", function(self, event, addon)
   end
 end);
 
-SLASH_MACROMANAGER1 = "/macromanager";
-function SlashCmdList.MACROMANAGER(msg)
+SlashCommand:Add(ADDON_NAME, function()
   macro_manager_main_frame:Show();
   ------------------------------ BEGIN: TEST CODE ------------------------------
   if MacroManagerData.count == nil then
@@ -37,4 +36,4 @@ function SlashCmdList.MACROMANAGER(msg)
   MacroManagerData.count = MacroManagerData.count + 1;
   print("Count " .. MacroManagerData.count);
   ------------------------------- END: TEST CODE -------------------------------
-end
+end, "/macromanager", "/macm");
