@@ -2,7 +2,11 @@ package-as: MacroManager
 
 ignore:
   - README.md
+  - .luacheckrc
+  - .shellcheckrc
+  - .gitignore
   - "ops/*"
+  - "MacroManagerDevTools/*"
 
 move-folders:
   MacroManager/MacroManager: MacroManager
