@@ -24,6 +24,7 @@ globals = {
 	"SlashCommand",
 	"MacroManagerData",
 	"MacroManagerDataAccessor",
+	"MacroManagerMainFrame",
 
 	---------------------------------------------------------------------------
 	-- Blizzard API

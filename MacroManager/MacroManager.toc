@@ -1,12 +1,15 @@
 ## Interface: 100200
 ## Title: MacroManager
 ## Author: Glaubstar (Blake Glaub)
-## Version: 0.0.1
+## Version: @project-version@
 ## Notes: Manages macros in a better way than the default UI
 ## SavedVariables: MacroManagerData
 
 # Helpers
 helpers\SlashCommand.lua
+
+# Frames
+frames\MacroManagerMainFrame.lua
 
 # Data Access
 MacroManagerDataAccessor.lua

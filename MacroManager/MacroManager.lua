@@ -1,32 +1,17 @@
 local ADDON_NAME = "MacroManager"
 
 -- Create the main frame that will contain the macro manager
-local macro_manager_main_frame = CreateFrame("FRAME", "MacroManagerMainFrame", UIParent, "BasicFrameTemplateWithInset");
+local macro_manager_main_frame = MacroManagerMainFrame:Create();
 
--- Set all the UI factors of the main frame
-macro_manager_main_frame:SetMovable(true);
-macro_manager_main_frame:EnableMouse(true);
-macro_manager_main_frame:RegisterForDrag("LeftButton");
-macro_manager_main_frame:SetScript("OnDragStart", macro_manager_main_frame.StartMoving);
-macro_manager_main_frame:SetScript("OnDragStop", macro_manager_main_frame.StopMovingOrSizing);
-macro_manager_main_frame:SetWidth(1000);
-macro_manager_main_frame:SetHeight(500);
-macro_manager_main_frame:SetPoint("CENTER");
-macro_manager_main_frame:Hide();
-
--- Establish the events that the main frame should be concerned with
-macro_manager_main_frame:RegisterEvent("ADDON_LOADED");
-macro_manager_main_frame:RegisterEvent("PLAYER_LOGOUT");
-
--- Establish the event handler for the main frame
-macro_manager_main_frame:SetScript("OnEvent", function(self, event, addon)
-  if event == "ADDON_LOADED" and addon == ADDON_NAME then
-    MacroManagerDataAccessor:Initialize();
-  elseif event == "PLAYER_LOGOUT" then
-    MacroManagerDataAccessor:Finalize();
-  end
+-- Setup the load and unload listeners
+macro_manager_main_frame.MacroManagerEstablishLoadListener(function()
+  MacroManagerDataAccessor:Initialize();
 end);
+macro_manager_main_frame.MacroManagerEstablishUnloadListener(function()
+  MacroManagerDataAccessor:Finalize();
+end)
 
+-- Setup the main slash command
 SlashCommand:Add(ADDON_NAME, function()
   macro_manager_main_frame:Show();
   ------------------------------ BEGIN: TEST CODE ------------------------------
