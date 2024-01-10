@@ -10,3 +10,7 @@ end
 function MacroManagerDataAccessor:Finalize()
   -- TODO
 end
+
+function MacroManagerDataAccessor:BackupGlobalMacros(macros)
+  MacroManagerData.backup = macros;
+end

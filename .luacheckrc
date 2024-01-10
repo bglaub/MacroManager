@@ -22,6 +22,7 @@ globals = {
 	-- MacroManager Specific
 	---------------------------------------------------------------------------
 	"SlashCommand",
+	"MacroHandler",
 	"MacroManagerData",
 	"MacroManagerDataAccessor",
 	"MacroManagerMainFrame",
@@ -33,6 +34,8 @@ globals = {
 	"SlashCmdList",
 	"CreateFrame",
 	"UIParent",
+	"GetNumMacros",
+	"GetMacroInfo",
 
 	----------------------------------------------------------------------------
 	-- Blizzard API for Dev Tools

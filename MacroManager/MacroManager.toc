@@ -7,6 +7,7 @@
 
 # Helpers
 helpers\SlashCommand.lua
+helpers\MacroHandler.lua
 
 # Frames
 frames\MacroManagerMainFrame.lua

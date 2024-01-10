@@ -15,6 +15,7 @@ end)
 SlashCommand:Add(ADDON_NAME, function()
   macro_manager_main_frame:Show();
   ------------------------------ BEGIN: TEST CODE ------------------------------
+  MacroHandler:BackupMacros();
   if MacroManagerData.count == nil then
     MacroManagerData.count = 0;
   end
