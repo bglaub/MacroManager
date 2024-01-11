@@ -12,5 +12,21 @@ function MacroManagerDataAccessor:Finalize()
 end
 
 function MacroManagerDataAccessor:BackupGlobalMacros(macros)
-  MacroManagerData.backup = macros;
+  if MacroManagerData.backup == nil then
+    MacroManagerData.backup = {};
+  end
+  MacroManagerData.backup.global = macros;
+end
+
+function MacroManagerDataAccessor:BackupCharacterMacros(macros)
+  if next(macros) == nil then
+    return;
+  end
+  if MacroManagerData.backup == nil then
+    MacroManagerData.backup = {};
+  end
+  if MacroManagerData.backup.characters == nil then
+    MacroManagerData.backup.characters = {};
+  end
+  MacroManagerData.backup.characters[UnitName("player")] = macros;
 end

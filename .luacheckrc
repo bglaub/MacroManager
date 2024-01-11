@@ -34,6 +34,7 @@ globals = {
 	"SlashCmdList",
 	"CreateFrame",
 	"UIParent",
+	"UnitName",
 	"GetNumMacros",
 	"GetMacroInfo",
 
