@@ -9,17 +9,14 @@ macro_manager_main_frame.MacroManagerEstablishLoadListener(function()
 end);
 macro_manager_main_frame.MacroManagerEstablishUnloadListener(function()
   MacroManagerDataAccessor:Finalize();
-end)
+end);
+
+-- Setup the backup macros listener
+macro_manager_main_frame.MacroManagerEstablishBackupMacrosListener(function()
+  MacroHandler:BackupMacros();
+end);
 
 -- Setup the main slash command
 SlashCommand:Add(ADDON_NAME, function()
   macro_manager_main_frame:Show();
-  ------------------------------ BEGIN: TEST CODE ------------------------------
-  MacroHandler:BackupMacros();
-  if MacroManagerData.count == nil then
-    MacroManagerData.count = 0;
-  end
-  MacroManagerData.count = MacroManagerData.count + 1;
-  print("Count " .. MacroManagerData.count);
-  ------------------------------- END: TEST CODE -------------------------------
 end, "/macromanager", "/macm");

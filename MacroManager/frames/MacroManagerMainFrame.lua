@@ -16,6 +16,23 @@ function MacroManagerMainFrame:Create()
   main_frame:SetPoint("CENTER");
   main_frame:Hide();
 
+  -- Add backup button
+  local backup_macros_button = CreateFrame("Button", "MacroManagerBackupButton", main_frame, "UIPanelButtonTemplate")
+  backup_macros_button:SetPoint("BOTTOMLEFT", 15, 15);
+  backup_macros_button:SetWidth(115);
+  backup_macros_button:SetHeight(30);
+  backup_macros_button:SetText("Backup Macros");
+
+  -- Setup ability to add backup function
+  main_frame.MacroManagerEstablishBackupMacrosListener = function(fn)
+    backup_macros_button.macro_manager_backup_macros_fn = fn;
+  end
+
+  -- Establish the on click handler for the backup button
+  backup_macros_button:SetScript("OnClick", function(button)
+    button.macro_manager_backup_macros_fn();
+  end);
+
   -- Establish the events that the main frame should be concerned with
   main_frame:RegisterEvent("ADDON_LOADED");
   main_frame:RegisterEvent("PLAYER_LOGOUT");
