@@ -27,11 +27,5 @@ jobs:
 
       - name: Create Package
         uses: BigWigsMods/packager@v2
-        with:
-          args: -d -z
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: MacroManager-${{ github.sha }}
-          path: .release/
+        env:
+          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
