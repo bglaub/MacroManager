@@ -2,8 +2,9 @@ package-as: MacroManager
 
 ignore:
   - README.md
-  - .luacheckrc
   - .shellcheckrc
+  - .pkgmeta
+  - .luacheckrc
   - .gitignore
   - "ops/*"
   - "MacroManagerDevTools/*"

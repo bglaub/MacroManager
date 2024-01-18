@@ -1,2 +1,5 @@
 # release directory created by bundling
 .release/
+
+# package metadata created for development bundling
+.pkgmeta-dev

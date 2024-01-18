@@ -4,11 +4,10 @@
 set -eu
 
 function main() {
+
     # make all globals accessible
-    # shellcheck source=ops/global.sh
-    . ./global.sh
-    
-    local addon_directory=${1:-"${DEFAULT_ADDON_DIRECTORY}"}
+    # shellcheck source=/dev/null
+    source "${MACRO_MANAGER_WORKSPACE_PATH}/ops/global.sh"
     
     echo ""
     echo ""
@@ -17,7 +16,7 @@ function main() {
     echo "--------------------------------------------------------------------------------"
     
     # delete any stored variables
-    cd "${addon_directory}/../../WTF"
+    cd "${WOW_ADDON_DIRECTORY}/../../WTF"
     find . -name "MacroManager.lua*" -type f -delete -print
 
     echo "--------------------------------------------------------------------------------"

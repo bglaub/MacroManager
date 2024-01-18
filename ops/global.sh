@@ -1,3 +1,3 @@
 #!/bin/bash
 
-export DEFAULT_ADDON_DIRECTORY="/c/Program Files (x86)/World of Warcraft/_retail_/Interface/AddOns"
+export WOW_ADDON_DIRECTORY="${MACRO_MANAGER_WOW_PATH}/_retail_/Interface/AddOns"

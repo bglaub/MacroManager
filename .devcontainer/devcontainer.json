@@ -1,0 +1,19 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+	"customizations": {
+		"vscode": {
+			"extensions": ["trixnz.vscode-lua"]
+		}
+	},
+	"mounts": [
+		"source=${localEnv:MACRO_MANAGER_WOW_PATH},target=/mnt/wow,type=bind,consistency=cached"
+	],
+	"containerEnv": {
+		"MACRO_MANAGER_WORKSPACE_PATH": "/workspaces/MacroManager"
+	},
+	"remoteEnv": {
+		"MACRO_MANAGER_WOW_PATH": "/mnt/wow"
+	}
+}

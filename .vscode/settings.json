@@ -1,0 +1,3 @@
+{
+    "lua.luacheckPath": "/usr/local/bin/luacheck"
+}

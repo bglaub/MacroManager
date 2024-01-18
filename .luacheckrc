@@ -1,6 +1,7 @@
 std = "lua51"
 exclude_files = {
-	".luacheckrc"
+	".luacheckrc",
+	".release/*"
 }
 ignore = {
 	---------------------------------------------------------------------------
