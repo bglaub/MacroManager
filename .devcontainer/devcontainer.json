@@ -4,7 +4,10 @@
     },
 	"customizations": {
 		"vscode": {
-			"extensions": ["trixnz.vscode-lua"]
+			"extensions": [
+				"trixnz.vscode-lua",
+				"timonwong.shellcheck"
+			]
 		}
 	},
 	"mounts": [

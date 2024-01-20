@@ -3,9 +3,8 @@ FROM mcr.microsoft.com/devcontainers/base:jammy
 RUN apt-get update \
     ## Install:
     ##    git and svn for release script
-    ##    shellcheck for linting shell files
     ##    lua for luacheck
-    && apt-get -y install git subversion shellcheck lua5.2 liblua5.2 \
+    && apt-get -y install git subversion lua5.2 liblua5.2 \
     ## Install luacheck for linting lua files
     && mkdir -p /tmp/luarocks \
     && cd /tmp/luarocks \
