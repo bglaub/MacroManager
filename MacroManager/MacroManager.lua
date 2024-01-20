@@ -1,5 +1,4 @@
-local MacroManager = LibStub("AceAddon-3.0"):NewAddon("MacroManager")
-local MacroManagerConsole = LibStub("AceConsole-3.0")
+local MacroManager = LibStub("AceAddon-3.0"):NewAddon("MacroManager", "AceConsole-3.0")
 
 -- Setup the load and unload listeners
 function MacroManager:OnEnable()
@@ -21,5 +20,5 @@ end);
 local slash_command=function()
   macro_manager_main_frame:Show();
 end
-MacroManagerConsole:RegisterChatCommand("macromanager", slash_command)
-MacroManagerConsole:RegisterChatCommand("macm", slash_command)
+MacroManager:RegisterChatCommand("macromanager", slash_command)
+MacroManager:RegisterChatCommand("macm", slash_command)
