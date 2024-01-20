@@ -7,7 +7,7 @@ function main() {
 
     # make all globals accessible
     # shellcheck source=/dev/null
-    source "${MACRO_MANAGER_WORKSPACE_PATH}/ops/global.sh"
+    source "${MACRO_MANAGER_WORKSPACE_PATH}/.devcontainer/ops/global.sh"
     
     echo ""
     echo ""

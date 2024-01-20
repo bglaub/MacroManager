@@ -29,6 +29,22 @@ function main() {
     # run release
     ./release.sh -z -d -t "$MACRO_MANAGER_WORKSPACE_PATH" -m "${MACRO_MANAGER_WORKSPACE_PATH}/.pkgmeta-dev"
 
+    # move to workspace to run git check
+    cd "$MACRO_MANAGER_WORKSPACE_PATH"
+
+    # detect untracked files
+    local untracked_files
+    untracked_files="$(git ls-files . --exclude-standard --others)"
+
+    # report on any untracked files
+    if [ -n "$untracked_files" ]; then
+      echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      echo "!!                                                                            !!"
+      echo "!! There are untracked files, so they will not be included in bundle.         !!"
+      echo "!!                                                                            !!"
+      echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    fi
+
     echo "--------------------------------------------------------------------------------"
     echo ""
     echo ""

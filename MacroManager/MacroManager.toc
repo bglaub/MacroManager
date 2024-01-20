@@ -5,8 +5,10 @@
 ## Notes: Manages macros in a better way than the default UI
 ## SavedVariables: MacroManagerData
 
+# External Libraries
+embeds.xml
+
 # Helpers
-helpers\SlashCommand.lua
 helpers\MacroHandler.lua
 
 # Frames

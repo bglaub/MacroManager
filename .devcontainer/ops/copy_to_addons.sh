@@ -7,10 +7,10 @@ function main() {
 
     # make all globals accessible
     # shellcheck source=/dev/null
-    source "${MACRO_MANAGER_WORKSPACE_PATH}/ops/global.sh"
+    source "${MACRO_MANAGER_WORKSPACE_PATH}/.devcontainer/ops/global.sh"
 
     # re-establish bundle
-    "$MACRO_MANAGER_WORKSPACE_PATH"/ops/bundle.sh
+    "$MACRO_MANAGER_WORKSPACE_PATH"/.devcontainer/ops/bundle.sh
     
     echo ""
     echo ""

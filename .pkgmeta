@@ -1,5 +1,12 @@
 package-as: MacroManager
 
+externals:
+  MacroManager/libs/LibStub: https://repos.curseforge.com/wow/libstub/trunk
+  MacroManager/libs/AceAddon-3.0: https://repos.curseforge.com/wow/ace3/trunk/AceAddon-3.0
+  MacroManager/libs/AceConsole-3.0: https://repos.curseforge.com/wow/ace3/trunk/AceConsole-3.0
+
+external-nolib-creation: no
+
 ignore:
   - README.md
   - .shellcheckrc
